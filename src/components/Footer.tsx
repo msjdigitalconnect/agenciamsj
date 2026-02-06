@@ -17,7 +17,7 @@ const Footer = () => {
               Sobre
             </a>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5516993820879?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20consultoria%20MSJ."
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
