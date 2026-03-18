@@ -1,11 +1,11 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
   { value: 150, suffix: "+", label: "Empresas Atendidas" },
   { value: 2.5, suffix: "M+", label: "Em Receita Gerada (R$)", decimals: 1 },
   { value: 98, suffix: "%", label: "Taxa de Satisfação" },
-  { value: 45, suffix: "dias", label: "Tempo Médio p/ Resultados" },
+  { value: 45, suffix: " dias", label: "Tempo Médio p/ Resultados" },
 ];
 
 const AnimatedCounter = ({
@@ -26,15 +26,15 @@ const AnimatedCounter = ({
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
-          const mv = { val: 0 };
-          const controls = animate(mv, { val: value }, {
-            duration: 2,
-            ease: "easeOut",
-            onUpdate: () => {
-              setDisplay(mv.val.toFixed(decimals));
-            },
-          });
-          return () => controls.stop();
+          const duration = 2000;
+          const start = performance.now();
+          const step = (now: number) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setDisplay((eased * value).toFixed(decimals));
+            if (progress < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
         }
       },
       { threshold: 0.3 }
