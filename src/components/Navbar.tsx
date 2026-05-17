@@ -39,12 +39,12 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto max-w-6xl px-6 flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="text-gradient-gold font-display text-xl font-bold">
+        <a href="#" className="text-gradient-gold font-display text-base sm:text-lg md:text-xl font-bold truncate">
           MSJ Digital Connect
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden xl:flex items-center gap-5">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -64,7 +64,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-foreground p-2"
+          className="xl:hidden text-foreground p-2"
           aria-label="Menu"
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -78,7 +78,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
+            className="xl:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
           >
             <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
