@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import aboutCeo from "@/assets/about-ceo.jpg";
 
 const AboutSection = () => {
   return (
-    <section className="py-24 px-6">
+    <section className="py-20 sm:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -39,22 +40,26 @@ const AboutSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
           >
-            <div className="glass-card rounded-2xl p-10 gold-border-glow">
-              <div className="space-y-8">
-                {[
-                  { value: "150+", label: "Clientes Atendidos" },
-                  { value: "98%", label: "Taxa de Satisfação" },
-                  { value: "3x", label: "Aumento Médio em Faturamento" },
-                ].map((stat) => (
-                  <div key={stat.label} className="flex items-center gap-6">
-                    <span className="text-gradient-gold font-display text-4xl font-bold min-w-[80px]">
-                      {stat.value}
-                    </span>
-                    <span className="text-muted-foreground text-lg">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
+            <div className="relative rounded-2xl overflow-hidden gold-border-glow">
+              <img
+                src={aboutCeo}
+                alt="Mariana — Fundadora & CEO da MSJ Digital Connect"
+                loading="lazy"
+                width={1024}
+                height={1280}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <p className="text-primary text-xs tracking-[0.25em] uppercase mb-1">
+                  Liderança
+                </p>
+                <p className="font-display text-xl sm:text-2xl text-foreground font-semibold">
+                  Mariana — Fundadora & CEO
+                </p>
+                <p className="text-muted-foreground text-sm mt-1">
+                  Diretora Executiva da MSJ Digital Connect
+                </p>
               </div>
             </div>
           </motion.div>
