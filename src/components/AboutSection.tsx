@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutCeo from "@/assets/about-ceo.jpg";
+import aboutDigital from "@/assets/about-digital.jpg";
 
 const AboutSection = () => {
   return (
@@ -42,8 +42,8 @@ const AboutSection = () => {
           >
             <div className="relative rounded-2xl overflow-hidden gold-border-glow">
               <img
-                src={aboutCeo}
-                alt="Mariana — Fundadora & CEO da MSJ Digital Connect"
+                src={aboutDigital}
+                alt="Ambiente digital e tecnologia MSJ"
                 loading="lazy"
                 width={1024}
                 height={1280}
