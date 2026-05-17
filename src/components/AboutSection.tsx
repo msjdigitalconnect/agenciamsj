@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutCeo from "@/assets/about-ceo.jpg";
+import aboutDigital from "@/assets/about-digital.jpg";
 
 const AboutSection = () => {
   return (
