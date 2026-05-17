@@ -49,18 +49,7 @@ const AboutSection = () => {
                 height={1280}
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                <p className="text-primary text-xs tracking-[0.25em] uppercase mb-1">
-                  Liderança
-                </p>
-                <p className="font-display text-xl sm:text-2xl text-foreground font-semibold">
-                  Mariana — Fundadora & CEO
-                </p>
-                <p className="text-muted-foreground text-sm mt-1">
-                  Diretora Executiva da MSJ Digital Connect
-                </p>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
             </div>
           </motion.div>
         </div>
