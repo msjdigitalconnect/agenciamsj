@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  "Google Partner",
+  "Google",
   "Meta Business",
-  "RD Station",
   "Hotmart",
-  "Shopify",
+  "Lovable",
   "WordPress",
+  "Alpha",
 ];
 
 const PartnersSection = () => {
