@@ -1,47 +1,60 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  "Google",
-  "Meta Business",
-  "Hotmart",
-  "Lovable",
-  "WordPress",
-  "Alpha",
+  { name: "Google", letters: "G", color: "from-[#4285F4] via-[#EA4335] to-[#FBBC05]" },
+  { name: "Meta", letters: "M", color: "from-[#0064E0] to-[#0081FB]" },
+  { name: "Facebook", letters: "f", color: "from-[#1877F2] to-[#0a5fcf]" },
+  { name: "Instagram", letters: "IG", color: "from-[#F58529] via-[#DD2A7B] to-[#8134AF]" },
+  { name: "Hotmart", letters: "H", color: "from-[#F04E23] to-[#c2371a]" },
+  { name: "Kiwify", letters: "K", color: "from-[#00C566] to-[#00994f]" },
+  { name: "HostGator", letters: "HG", color: "from-[#F58220] to-[#d36812]" },
+  { name: "WordPress", letters: "W", color: "from-[#21759B] to-[#155a78]" },
+  { name: "Lovable", letters: "L", color: "from-[#FF4D8D] to-[#c7356d]" },
+  { name: "Antigravity", letters: "A", color: "from-[#7A5AF8] to-[#4F32C7]" },
+  { name: "Alpha", letters: "α", color: "from-primary to-[hsl(43_50%_40%)]" },
 ];
 
 const PartnersSection = () => {
   return (
-    <section className="py-16 px-6 border-t border-b border-border/50">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-b border-border/50">
       <div className="container mx-auto max-w-6xl">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center text-muted-foreground text-sm tracking-[0.2em] uppercase mb-10"
-        >
-          Ferramentas e Parceiros
-        </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-wrap justify-center items-center gap-8 md:gap-14"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10 sm:mb-12"
         >
-          {partners.map((name, i) => (
+          <p className="text-primary text-sm tracking-[0.25em] uppercase mb-3 font-sans">
+            Ecossistema
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold">
+            Ferramentas e <span className="text-gradient-gold">Parceiros</span>
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+          {partners.map((p, i) => (
             <motion.div
-              key={name}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              key={p.name}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="text-muted-foreground/50 font-display text-lg md:text-xl font-bold hover:text-primary/60 transition-colors duration-300 select-none"
+              transition={{ duration: 0.4, delay: i * 0.05 }}
+              whileHover={{ y: -4, scale: 1.03 }}
+              className="glass-card rounded-xl p-4 sm:p-5 flex flex-col items-center justify-center gap-2 hover:gold-border-glow transition-all duration-300 group cursor-default"
             >
-              {name}
+              <div
+                className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${p.color} flex items-center justify-center text-white font-display font-bold text-xl sm:text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}
+              >
+                {p.letters}
+              </div>
+              <span className="text-foreground/80 text-xs sm:text-sm font-medium text-center">
+                {p.name}
+              </span>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

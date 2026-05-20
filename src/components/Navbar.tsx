@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import msjLogo from "@/assets/msj-logo.png";
 
 const navLinks = [
   { label: "Serviços", href: "#servicos" },
+  { label: "Processo", href: "#processo" },
   { label: "Método", href: "#metodo" },
   { label: "Sobre", href: "#sobre" },
   { label: "Resultados", href: "#resultados" },
@@ -39,8 +41,15 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto max-w-6xl px-6 flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="text-gradient-gold font-display text-base sm:text-lg md:text-xl font-bold truncate">
-          MSJ Digital Connect
+        <a href="#" className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <img
+            src={msjLogo}
+            alt="MSJ Digital Connect"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-md object-cover flex-shrink-0 gold-border-glow"
+          />
+          <span className="text-gradient-gold font-display text-sm sm:text-base md:text-lg font-bold truncate">
+            MSJ Digital Connect
+          </span>
         </a>
 
         {/* Desktop nav */}
@@ -56,7 +65,7 @@ const Navbar = () => {
           ))}
           <Button variant="gold" size="sm" className="rounded-full ml-2" asChild>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              Agendar
+              FALAR AGORA
             </a>
           </Button>
         </nav>
@@ -91,9 +100,9 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="gold" size="sm" className="rounded-full mt-2 w-fit" asChild>
+              <Button variant="gold" size="sm" className="rounded-full mt-2 w-full sm:w-fit" asChild>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  Agendar Consultoria
+                  FALAR AGORA
                 </a>
               </Button>
             </nav>
