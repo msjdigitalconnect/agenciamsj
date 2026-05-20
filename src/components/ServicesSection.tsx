@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Target, MapPin, Globe, BarChart3 } from "lucide-react";
+import workspaceAnalytics from "@/assets/workspace-analytics.jpg";
 
 const services = [
   {
@@ -51,9 +52,10 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="glass-card rounded-xl p-8 group hover:gold-border-glow transition-all duration-500"
+              whileHover={{ y: -8, scale: 1.03 }}
+              className="glass-card rounded-xl p-8 group hover:gold-border-glow transition-all duration-500 cursor-default"
             >
-              <service.icon className="w-10 h-10 text-primary mb-5 group-hover:scale-110 transition-transform duration-300" />
+              <service.icon className="w-10 h-10 text-primary mb-5 group-hover:scale-125 group-hover:rotate-6 transition-transform duration-500" />
               <h3 className="font-display text-xl font-semibold mb-3 text-foreground">
                 {service.title}
               </h3>
@@ -63,6 +65,36 @@ const ServicesSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Workspace showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          whileHover={{ scale: 1.01 }}
+          className="mt-12 sm:mt-16 relative rounded-2xl overflow-hidden gold-border-glow group"
+        >
+          <img
+            src={workspaceAnalytics}
+            alt="Workspace com monitores de analytics e gestão de campanhas"
+            loading="lazy"
+            width={1280}
+            height={832}
+            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
+          <div className="absolute inset-0 flex items-center p-6 sm:p-10">
+            <div className="max-w-md">
+              <p className="text-primary text-xs tracking-[0.25em] uppercase mb-2 font-sans">
+                Operação Premium
+              </p>
+              <p className="font-display text-lg sm:text-2xl font-semibold text-foreground">
+                Tecnologia, dados e estratégia trabalhando 24h pelo seu negócio.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
