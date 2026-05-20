@@ -3,7 +3,7 @@ import { Target, Headphones, BadgeCheck } from "lucide-react";
 
 const metrics = [
   { icon: Target, text: "Foco Total em Resultados" },
-  { icon: Headphones, text: "Suporte Premium Dedicado" },
+  { icon: Headphones, text: "Suporte Premium" },
   { icon: BadgeCheck, text: "Estratégias Validadas" },
 ];
 
