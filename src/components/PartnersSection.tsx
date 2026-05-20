@@ -7,18 +7,18 @@ type Partner = {
   bg?: string;
 };
 
-// Real brand logos via simpleicons CDN (SVGs, official brand colors)
+// Real brand logos via logo.clearbit.com (official brand assets)
 const partners: Partner[] = [
-  { name: "Google", logo: "https://cdn.simpleicons.org/google" },
-  { name: "Meta", logo: "https://cdn.simpleicons.org/meta/0064E0" },
-  { name: "Facebook", logo: "https://cdn.simpleicons.org/facebook/1877F2" },
-  { name: "Instagram", logo: "https://cdn.simpleicons.org/instagram/E4405F" },
-  { name: "Hotmart", logo: "https://cdn.simpleicons.org/hotmart/F04E23" },
-  { name: "Kiwify", logo: "https://cdn.simpleicons.org/kiwix/00C566" },
-  { name: "HostGator", logo: "https://cdn.simpleicons.org/hostinger/673DE6" },
-  { name: "WordPress", logo: "https://cdn.simpleicons.org/wordpress/21759B" },
-  { name: "Lovable", logo: "https://cdn.simpleicons.org/heart/FF4D8D" },
-  { name: "Antigravity", logo: "https://cdn.simpleicons.org/rocket/7A5AF8" },
+  { name: "Google", logo: "https://logo.clearbit.com/google.com" },
+  { name: "Meta", logo: "https://logo.clearbit.com/meta.com" },
+  { name: "Facebook", logo: "https://logo.clearbit.com/facebook.com" },
+  { name: "Instagram", logo: "https://logo.clearbit.com/instagram.com" },
+  { name: "Hotmart", logo: "https://logo.clearbit.com/hotmart.com" },
+  { name: "Kiwify", logo: "https://logo.clearbit.com/kiwify.com.br" },
+  { name: "HostGator", logo: "https://logo.clearbit.com/hostgator.com.br" },
+  { name: "WordPress", logo: "https://logo.clearbit.com/wordpress.com" },
+  { name: "Lovable", logo: "https://logo.clearbit.com/lovable.dev" },
+  { name: "Antigravity", logo: "https://logo.clearbit.com/antigravity.com" },
   { name: "Alpha", logo: alphaLogo, bg: "bg-background" },
 ];
 
