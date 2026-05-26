@@ -21,8 +21,10 @@ import PixelInjector from "@/components/PixelInjector";
 import { usePageTracking } from "@/hooks/usePageTracking";
 
 const Index = () => {
+  usePageTracking();
   return (
     <main className="min-h-screen bg-background">
+      <PixelInjector />
       <Navbar />
       <HeroSection />
       <div id="servicos">
@@ -45,6 +47,7 @@ const Index = () => {
       </div>
       <QuoteSection />
       <PartnersSection />
+      <PortfolioSection />
       <div id="blog">
         <BlogPreviewSection />
       </div>
