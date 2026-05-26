@@ -10,12 +10,15 @@ import DifferentialsSection from "@/components/DifferentialsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import QuoteSection from "@/components/QuoteSection";
 import PartnersSection from "@/components/PartnersSection";
+import PortfolioSection from "@/components/PortfolioSection";
 import BlogPreviewSection from "@/components/BlogPreviewSection";
 import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PixelInjector from "@/components/PixelInjector";
+import { usePageTracking } from "@/hooks/usePageTracking";
 
 const Index = () => {
   return (
