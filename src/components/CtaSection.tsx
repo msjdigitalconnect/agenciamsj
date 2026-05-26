@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
-const WHATSAPP_URL =
-  "https://wa.me/5516993820879?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20consultoria%20MSJ.";
+import { useWhatsAppUrl } from "@/lib/settings";
+import { trackEvent } from "@/lib/tracking";
 
 const CtaSection = () => {
+  const WHATSAPP_URL = useWhatsAppUrl();
   return (
     <section className="py-24 px-6">
       <div className="container mx-auto max-w-4xl">
@@ -38,7 +38,12 @@ const CtaSection = () => {
                 className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-10 py-5 sm:py-6 rounded-full"
                 asChild
               >
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent("WhatsApp", { source: "cta" })}
+                >
                   FALAR AGORA
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1" />
                 </a>
