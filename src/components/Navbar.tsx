@@ -20,8 +20,10 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const WHATSAPP_URL = useWhatsAppUrl();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const onCTA = () => trackEvent("WhatsApp", { source: "navbar" });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -44,11 +46,11 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-2 sm:gap-3 min-w-0">
           <img
             src={msjLogo}
-            alt="MSJ Digital Connect"
+            alt="Digital Connect"
             className="w-9 h-9 sm:w-10 sm:h-10 rounded-md object-cover flex-shrink-0 gold-border-glow"
           />
           <span className="text-gradient-gold font-display text-sm sm:text-base md:text-lg font-bold truncate">
-            MSJ Digital Connect
+            Digital Connect
           </span>
         </a>
 
@@ -64,7 +66,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="gold" size="sm" className="rounded-full ml-2" asChild>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={onCTA}>
               FALAR AGORA
             </a>
           </Button>
@@ -101,7 +103,7 @@ const Navbar = () => {
                 </a>
               ))}
               <Button variant="gold" size="sm" className="rounded-full mt-2 w-full sm:w-fit" asChild>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={onCTA}>
                   FALAR AGORA
                 </a>
               </Button>
