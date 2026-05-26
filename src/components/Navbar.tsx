@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import msjLogo from "@/assets/msj-logo.png";
+import { useWhatsAppUrl } from "@/lib/settings";
+import { trackEvent } from "@/lib/tracking";
 
 const navLinks = [
   { label: "Serviços", href: "#servicos" },
@@ -10,14 +12,12 @@ const navLinks = [
   { label: "Método", href: "#metodo" },
   { label: "Sobre", href: "#sobre" },
   { label: "Resultados", href: "#resultados" },
+  { label: "Portfólio", href: "#portifolio" },
   { label: "Depoimentos", href: "#depoimentos" },
   { label: "Blog", href: "#blog" },
   { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ];
-
-const WHATSAPP_URL =
-  "https://wa.me/5516993820879?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20consultoria%20MSJ.";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
