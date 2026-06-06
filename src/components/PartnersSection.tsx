@@ -7,7 +7,7 @@ import instagramLogo from "@/assets/partners/instagram.png";
 import hotmartLogo from "@/assets/partners/hotmart.jpg";
 import kiwifyLogo from "@/assets/partners/kiwify.webp";
 import hostgatorLogo from "@/assets/partners/hostgator.png";
-import wordpressLogo from "@/assets/partners/wordpress.jpeg";
+import wordpressLogo from "@/assets/partners/wordpress.png";
 
 type Partner = {
   name: string;
