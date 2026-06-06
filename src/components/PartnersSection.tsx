@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import alphaLogo from "@/assets/alpha-logo.png";
 import googleLogo from "@/assets/partners/google.png";
 import metaLogo from "@/assets/partners/meta.jpeg";
-import facebookLogo from "@/assets/partners/facebook.jpg";
+import facebookLogo from "@/assets/partners/facebook.png";
 import instagramLogo from "@/assets/partners/instagram.png";
 import hotmartLogo from "@/assets/partners/hotmart.jpg";
 import kiwifyLogo from "@/assets/partners/kiwify.webp";
