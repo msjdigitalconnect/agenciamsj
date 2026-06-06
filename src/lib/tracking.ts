@@ -47,18 +47,31 @@ function detectDevice(): "mobile" | "tablet" | "desktop" {
   return "desktop";
 }
 
-export function getEvents(): TrackEvent[] {
-  if (typeof window === "undefined") return [];
+const EMPTY: TrackEvent[] = [];
+let cachedRaw: string | null = null;
+let cachedSnapshot: TrackEvent[] = EMPTY;
+
+function readSnapshot(): TrackEvent[] {
+  if (typeof window === "undefined") return EMPTY;
   try {
     const raw = localStorage.getItem(EVENTS_KEY);
-    return raw ? (JSON.parse(raw) as TrackEvent[]) : [];
+    if (raw === cachedRaw) return cachedSnapshot;
+    cachedRaw = raw;
+    cachedSnapshot = raw ? (JSON.parse(raw) as TrackEvent[]) : EMPTY;
+    return cachedSnapshot;
   } catch {
-    return [];
+    return EMPTY;
   }
+}
+
+export function getEvents(): TrackEvent[] {
+  return readSnapshot();
 }
 
 export function clearEvents() {
   localStorage.removeItem(EVENTS_KEY);
+  cachedRaw = null;
+  cachedSnapshot = EMPTY;
   emit();
 }
 
@@ -77,16 +90,18 @@ export function trackEvent(
     referrer: document.referrer || "direct",
     meta,
   };
-  const events = getEvents();
-  events.push(ev);
-  // cap at 5000 events
+  const events = [...readSnapshot(), ev];
   const capped = events.slice(-5000);
-  localStorage.setItem(EVENTS_KEY, JSON.stringify(capped));
+  const serialized = JSON.stringify(capped);
+  localStorage.setItem(EVENTS_KEY, serialized);
+  cachedRaw = serialized;
+  cachedSnapshot = capped;
   emit();
 }
 
+const getServerSnapshot = () => EMPTY;
 export function useEvents() {
-  return useSyncExternalStore(subscribe, getEvents, () => []);
+  return useSyncExternalStore(subscribe, readSnapshot, getServerSnapshot);
 }
 
 // Range filtering helpers
