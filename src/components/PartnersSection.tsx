@@ -8,6 +8,8 @@ import hotmartLogo from "@/assets/partners/hotmart.jpg";
 import kiwifyLogo from "@/assets/partners/kiwify.webp";
 import hostgatorLogo from "@/assets/partners/hostgator.png";
 import wordpressLogo from "@/assets/partners/wordpress.png";
+import lovableLogo from "@/assets/partners/lovable.png";
+import antigravityLogo from "@/assets/partners/antigravity.png";
 
 type Partner = {
   name: string;
