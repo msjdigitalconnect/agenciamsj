@@ -26,8 +26,8 @@ const partners: Partner[] = [
   { name: "Kiwify", logo: kiwifyLogo },
   { name: "HostGator", logo: hostgatorLogo },
   { name: "WordPress", logo: wordpressLogo },
-  { name: "Lovable", wordmark: "Lovable" },
-  { name: "Antigravity", wordmark: "Antigravity" },
+  { name: "Lovable", logo: lovableLogo },
+  { name: "Antigravity", logo: antigravityLogo },
   { name: "Alpha", logo: alphaLogo },
 ];
 
