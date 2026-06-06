@@ -29,8 +29,9 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const loop = [...testimonials, ...testimonials];
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-6 overflow-hidden">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -46,16 +47,22 @@ const TestimonialsSection = () => {
             O que nossos clientes <span className="text-gradient-gold">dizem</span>
           </h2>
         </motion.div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="glass-card rounded-xl p-8 hover:gold-border-glow transition-all duration-500"
+      <div className="relative w-full overflow-hidden">
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+
+        <motion.div
+          className="flex gap-6 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+        >
+          {loop.map((t, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-xl p-8 hover:gold-border-glow transition-all duration-500 w-[320px] sm:w-[420px] flex-shrink-0"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.stars }).map((_, s) => (
@@ -69,9 +76,9 @@ const TestimonialsSection = () => {
                 <p className="font-semibold text-foreground">{t.name}</p>
                 <p className="text-muted-foreground text-sm">{t.company}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
