@@ -63,7 +63,13 @@ function subscribe(cb: () => void) {
 // --- WhatsApp number ---
 export function getWhatsAppNumber(): string {
   if (typeof window === "undefined") return DEFAULT_WA;
-  return localStorage.getItem(WA_KEY) || DEFAULT_WA;
+  const stored = localStorage.getItem(WA_KEY);
+  // Migrate previous default to new number automatically
+  if (stored === "5516993820879") {
+    localStorage.removeItem(WA_KEY);
+    return DEFAULT_WA;
+  }
+  return stored || DEFAULT_WA;
 }
 export function setWhatsAppNumber(n: string) {
   const cleaned = n.replace(/\D/g, "");
