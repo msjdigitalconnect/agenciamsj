@@ -17,14 +17,12 @@ const AdminLogin = () => {
     e.preventDefault();
     setError("");
     setLoading(true);
-    setTimeout(() => {
-      if (loginAdmin(email, pass)) {
-        navigate("/admindev/dashboard", { replace: true });
-      } else {
-        setError("Acesso negado. Credenciais inválidas.");
-      }
+    if (loginAdmin(email, pass)) {
+      navigate("/admindev/dashboard", { replace: true });
+    } else {
+      setError("Acesso negado. Credenciais inválidas.");
       setLoading(false);
-    }, 400);
+    }
   };
 
   return (
@@ -57,7 +55,11 @@ const AdminLogin = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              autoComplete="off"
+              autoComplete="email"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck={false}
+              inputMode="email"
             />
           </div>
           <div>
@@ -69,7 +71,10 @@ const AdminLogin = () => {
               value={pass}
               onChange={(e) => setPass(e.target.value)}
               required
-              autoComplete="off"
+              autoComplete="current-password"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck={false}
             />
           </div>
           {error && (
