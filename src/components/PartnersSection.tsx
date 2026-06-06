@@ -3,7 +3,7 @@ import alphaLogo from "@/assets/alpha-logo.png";
 import googleLogo from "@/assets/partners/google.png";
 import metaLogo from "@/assets/partners/meta.jpeg";
 import facebookLogo from "@/assets/partners/facebook.jpg";
-import instagramLogo from "@/assets/partners/instagram.jpeg";
+import instagramLogo from "@/assets/partners/instagram.png";
 import hotmartLogo from "@/assets/partners/hotmart.jpg";
 import kiwifyLogo from "@/assets/partners/kiwify.webp";
 import hostgatorLogo from "@/assets/partners/hostgator.png";
