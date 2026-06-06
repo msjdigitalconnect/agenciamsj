@@ -4,7 +4,7 @@ import { useSyncExternalStore } from "react";
 const WA_KEY = "msj:whatsapp_number";
 const PORTFOLIO_KEY = "msj:portfolio";
 
-const DEFAULT_WA = "5516993820879";
+const DEFAULT_WA = "5516991237921";
 const DEFAULT_MSG =
   "Olá, gostaria de saber mais sobre a consultoria.";
 

@@ -26,7 +26,7 @@ const QuoteSection = () => {
             <div className="w-16 h-px bg-primary mx-auto mb-6" />
 
             <p className="text-primary font-sans text-sm tracking-[0.2em] uppercase font-medium">
-              Mariana — Fundadora & CEO (Diretora Executiva)
+              Mariana — CEO (Diretora Executiva)
             </p>
             <p className="text-muted-foreground text-sm mt-1">
               MSJ Digital Connect

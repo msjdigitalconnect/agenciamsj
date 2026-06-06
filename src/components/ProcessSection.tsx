@@ -112,22 +112,23 @@ const ProcessSection = () => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, delay: 0.3 }}
           whileHover={{ scale: 1.01 }}
-          className="mt-14 sm:mt-20 relative rounded-2xl overflow-hidden gold-border-glow group"
+          className="mt-14 sm:mt-20 max-w-5xl mx-auto"
         >
-          <img
-            src={adsDashboard}
-            alt="Gerenciador de anúncios e métricas reais de campanha"
-            loading="lazy"
-            width={1280}
-            height={832}
-            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
+          <div className="rounded-2xl overflow-hidden gold-border-glow group">
+            <img
+              src={adsDashboard}
+              alt="Gerenciador de anúncios e métricas reais de campanha"
+              loading="lazy"
+              width={1280}
+              height={832}
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <div className="text-center mt-6 max-w-2xl mx-auto">
             <p className="text-primary text-xs tracking-[0.25em] uppercase mb-2 font-sans">
               Bastidores
             </p>
-            <p className="font-display text-lg sm:text-2xl font-semibold text-foreground max-w-xl">
+            <p className="font-display text-lg sm:text-2xl font-semibold text-foreground">
               Acompanhamos cada métrica em tempo real para escalar o que funciona.
             </p>
           </div>

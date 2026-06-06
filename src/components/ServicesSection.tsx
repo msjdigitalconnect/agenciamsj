@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, MapPin, Globe, BarChart3 } from "lucide-react";
+import { Target, MapPin, Globe, BarChart3, Activity } from "lucide-react";
 import workspaceAnalytics from "@/assets/workspace-analytics.jpg";
 
 const services = [
@@ -23,6 +23,11 @@ const services = [
     title: "Consultoria de Gestão",
     description: "Estruturação de processos e vendas.",
   },
+  {
+    icon: Activity,
+    title: "Movimentos",
+    description: "Ações estratégicas e movimentos de mercado para acelerar resultados.",
+  },
 ];
 
 const ServicesSection = () => {
@@ -44,7 +49,7 @@ const ServicesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -73,26 +78,25 @@ const ServicesSection = () => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
           whileHover={{ scale: 1.01 }}
-          className="mt-12 sm:mt-16 relative rounded-2xl overflow-hidden gold-border-glow group"
+          className="mt-12 sm:mt-16 max-w-5xl mx-auto"
         >
-          <img
-            src={workspaceAnalytics}
-            alt="Workspace com monitores de analytics e gestão de campanhas"
-            loading="lazy"
-            width={1280}
-            height={832}
-            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
-          <div className="absolute inset-0 flex items-center p-6 sm:p-10">
-            <div className="max-w-md">
-              <p className="text-primary text-xs tracking-[0.25em] uppercase mb-2 font-sans">
-                Operação Premium
-              </p>
-              <p className="font-display text-lg sm:text-2xl font-semibold text-foreground">
-                Tecnologia, dados e estratégia trabalhando 24h pelo seu negócio.
-              </p>
-            </div>
+          <div className="rounded-2xl overflow-hidden gold-border-glow group">
+            <img
+              src={workspaceAnalytics}
+              alt="Workspace com monitores de analytics e gestão de campanhas"
+              loading="lazy"
+              width={1280}
+              height={832}
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <div className="text-center mt-6 max-w-2xl mx-auto">
+            <p className="text-primary text-xs tracking-[0.25em] uppercase mb-2 font-sans">
+              Operação Premium
+            </p>
+            <p className="font-display text-lg sm:text-2xl font-semibold text-foreground">
+              Tecnologia, dados e estratégia trabalhando 24h pelo seu negócio.
+            </p>
           </div>
         </motion.div>
       </div>
