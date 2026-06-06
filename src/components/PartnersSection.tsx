@@ -8,6 +8,8 @@ import hotmartLogo from "@/assets/partners/hotmart.jpg";
 import kiwifyLogo from "@/assets/partners/kiwify.webp";
 import hostgatorLogo from "@/assets/partners/hostgator.png";
 import wordpressLogo from "@/assets/partners/wordpress.png";
+import lovableLogo from "@/assets/partners/lovable.png";
+import antigravityLogo from "@/assets/partners/antigravity.png";
 
 type Partner = {
   name: string;
@@ -24,8 +26,8 @@ const partners: Partner[] = [
   { name: "Kiwify", logo: kiwifyLogo },
   { name: "HostGator", logo: hostgatorLogo },
   { name: "WordPress", logo: wordpressLogo },
-  { name: "Lovable", wordmark: "Lovable" },
-  { name: "Antigravity", wordmark: "Antigravity" },
+  { name: "Lovable", logo: lovableLogo },
+  { name: "Antigravity", logo: antigravityLogo },
   { name: "Alpha", logo: alphaLogo },
 ];
 
