@@ -56,9 +56,10 @@ const ContactSection = () => {
             </p>
             <div className="space-y-5">
               {[
-                { icon: Phone, label: "+55 (16) 99382-0879" },
+                { icon: Phone, label: "+55 (16) 99123-7921" },
                 { icon: Mail, label: "contato@msjdigital.com.br" },
-                { icon: MapPin, label: "Ribeirão Preto, SP — Brasil" },
+                { icon: MapPin, label: "Atendimento em todo o Brasil" },
+                { icon: Clock, label: "Seg a Sex: 9h às 17h • Sáb: 9h às 12h" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -67,6 +68,16 @@ const ContactSection = () => {
                   <span className="text-foreground">{item.label}</span>
                 </div>
               ))}
+            </div>
+            <div className="rounded-xl overflow-hidden gold-border-glow border border-primary/20">
+              <iframe
+                title="Mapa do Brasil — Atendimento Nacional"
+                src="https://www.google.com/maps?q=Brasil&z=4&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-64 md:h-72 border-0"
+                allowFullScreen
+              />
             </div>
           </motion.div>
 
