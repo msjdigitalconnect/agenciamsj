@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, MapPin, Globe, BarChart3, Activity } from "lucide-react";
+import { Target, MapPin, Globe, BarChart3 } from "lucide-react";
 import workspaceAnalytics from "@/assets/workspace-analytics.jpg";
 
 const services = [
@@ -23,11 +23,6 @@ const services = [
     title: "Consultoria de Gestão",
     description: "Estruturação de processos e vendas.",
   },
-  {
-    icon: Activity,
-    title: "Movimentos",
-    description: "Ações estratégicas e movimentos de mercado para acelerar resultados.",
-  },
 ];
 
 const ServicesSection = () => {
@@ -49,7 +44,7 @@ const ServicesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
