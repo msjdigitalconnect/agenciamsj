@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, MapPin, Globe, BarChart3, Activity } from "lucide-react";
+import { Target, MapPin, Globe, BarChart3 } from "lucide-react";
 import workspaceAnalytics from "@/assets/workspace-analytics.jpg";
 
 const services = [
