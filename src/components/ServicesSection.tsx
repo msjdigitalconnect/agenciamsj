@@ -23,11 +23,6 @@ const services = [
     title: "Consultoria de Gestão",
     description: "Estruturação de processos e vendas.",
   },
-  {
-    icon: Activity,
-    title: "Movimentos",
-    description: "Ações estratégicas e movimentos de mercado para acelerar resultados.",
-  },
 ];
 
 const ServicesSection = () => {
