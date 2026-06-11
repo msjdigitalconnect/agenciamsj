@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { getWhatsAppNumber } from "@/lib/settings";
+import { saveContact } from "@/lib/contacts";
 import { trackEvent } from "@/lib/tracking";
 
 const ContactSection = () => {
@@ -12,6 +13,12 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    saveContact({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.phone.trim(),
+      message: form.message.trim(),
+    });
     const text = `Olá, meu nome é ${form.name}. ${form.message} | Email: ${form.email} | Tel: ${form.phone}`;
     trackEvent("Contact", { source: "form" });
     trackEvent("WhatsApp", { source: "contact_form" });
@@ -19,7 +26,8 @@ const ContactSection = () => {
       `https://wa.me/${getWhatsAppNumber()}?text=${encodeURIComponent(text)}`,
       "_blank"
     );
-    toast({ title: "Redirecionando para o WhatsApp...", description: "Sua mensagem foi preparada." });
+    toast({ title: "Mensagem registrada!", description: "Estamos te redirecionando para o WhatsApp." });
+    setForm({ name: "", email: "", phone: "", message: "" });
   };
 
   return (

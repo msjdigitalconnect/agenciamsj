@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Navigate, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { isAdminAuthed, logoutAdmin } from "@/lib/adminAuth";
-import { LogOut, Settings, BarChart3, LayoutGrid } from "lucide-react";
+import { LogOut, Settings, BarChart3, LayoutGrid, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const RequireAdmin = ({ children }: { children: ReactNode }) => {
@@ -40,6 +40,9 @@ const AdminLayout = () => {
         <nav className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible">
           <NavLink to="/admindev/dashboard" end className={linkCls}>
             <LayoutGrid className="w-4 h-4" /> Visão Geral
+          </NavLink>
+          <NavLink to="/admindev/dashboard/contacts" className={linkCls}>
+            <Users className="w-4 h-4" /> Contatos
           </NavLink>
           <NavLink to="/admindev/dashboard/reports" className={linkCls}>
             <BarChart3 className="w-4 h-4" /> Relatórios
